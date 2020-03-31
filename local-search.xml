@@ -4,32 +4,6 @@
   
   
   <entry>
-    <title>2.变量与常量</title>
-    <link href="/2020/04/01/2.%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/"/>
-    <url>/2020/04/01/2.%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/</url>
-    
-    <content type="html"><![CDATA[<p>##常量(Literal Constant)</p><p>字面常量：字面上的值</p><p>##变量</p><p>定义：变量类型 变量名 初始值</p><pre><code class="C">#include &lt;stdio.h&gt;int main(){    int name=0；    return 0；}</code></pre><p>变量名命名规则：字母、数字和下划线的组合，必须以下划线或者字母开头。不允许使用关键字作为变量名。</p><p>###整型变量</p><p>三种类型：char、short、int</p><table><thead><tr><th align="left">类型</th><th>sizeof</th><th align="left">表示范围</th></tr></thead><tbody><tr><td align="left">char</td><td>1</td><td align="left">-128~127</td></tr><tr><td align="left">short</td><td>2</td><td align="left">-32768~32767</td></tr><tr><td align="left">int</td><td>4</td><td align="left">-2147483648~2147483647</td></tr><tr><td align="left">unsigned char</td><td>1</td><td align="left">0~255</td></tr><tr><td align="left">unsigned short</td><td>2</td><td align="left">0~65535</td></tr><tr><td align="left">unsigned int</td><td>4</td><td align="left">0~4294967295</td></tr><tr><td align="left">float</td><td>4</td><td align="left">-3.4x10^38~3.4x10^38</td></tr><tr><td align="left">double</td><td>8</td><td align="left">-1.7x10^308~1.7x10^308</td></tr></tbody></table><p>根据不同的数值范围，选择不同的类型。</p><p>####整型变量的赋值</p><pre><code class="C">int n1 = 10;//十进制方式int n2 = 0x0A;//十六进制方式int a = 0x123456789;int b = 305419896;</code></pre><p>###浮点型变量</p><p>用于表示小数</p><p>double：8个字节(表示范围更大)</p><p>float：4个字节(范围较小)</p><p>浮点型变量输入：</p><pre><code class="C">//float型变量的输入float a;scanf(&quot;%f&quot;,&amp;a)；//float变量的输出float b = 12.25；printf(&quot;%f&quot;,b);</code></pre><p>float 是 <strong>%f</strong> ，double 是 <strong>%lf</strong></p><h3 id="布尔型变量"><a href="#布尔型变量" class="headerlink" title="布尔型变量"></a>布尔型变量</h3><p>使用布尔型变量前，要添加头文件</p><pre><code class="C">#include &lt;stdbool.h&gt;</code></pre><p>布尔型变量只有两个：true 和 false</p><pre><code class="C">bool a = true;bool is_late = false;</code></pre>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>3.内存</title>
-    <link href="/2020/04/01/3.%E5%86%85%E5%AD%98/"/>
-    <url>/2020/04/01/3.%E5%86%85%E5%AD%98/</url>
-    
-    <content type="html"><![CDATA[<h2 id="存"><a href="#存" class="headerlink" title="存"></a>存</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>内存：单元是字节，每个字节存储8bit</p><p>每个单元给予编号：00000000~FFFFFFFF</p><p>内存单元的编号称为：<strong>内存地址</strong></p><h3 id="变量与内存"><a href="#变量与内存" class="headerlink" title="变量与内存"></a>变量与内存</h3><p>变量储存在内存中，变量的大小决定占用多少内存。</p><pre><code class="c">//查看变量的大小char a;short b;int c;printf(&quot;%d,%d,%d&quot;,sizeof(a),sizeof(b),sizeof(c));</code></pre><p>变量存放地址查看</p><pre><code class="c">int a = 0x12345678;printf(&quot;address:%08X \n&quot;,&amp;a);//输出即为变量a存放的地址</code></pre><h4 id="整型变量的表示范围"><a href="#整型变量的表示范围" class="headerlink" title="整型变量的表示范围"></a>整型变量的表示范围</h4><p>1个字节的表示范围：0000 0000~1111 1111(0xFF)</p><p>2个字节的表示范围：0000 0000 0000 0000<del>1111 1111 1111 1111(0x0000</del>0xFFFF)</p><p>4个字节的表示范围：0x00000000~0xFFFFFFFF</p><h4 id="有符号与无符号"><a href="#有符号与无符号" class="headerlink" title="有符号与无符号"></a>有符号与无符号</h4><p>无符号：1100 0110  表示198</p><pre><code class="C">unsigned char a = 198;unsigned char b = 0x11000110;//a与b的输出结果应该相同</code></pre><p>有符号：最高位是符号位，采用补码表示</p><pre><code class="C">char a = 0x11000110;char b = -58;//a与b的输出结果应该相同</code></pre><p>###小结</p><ul><li>变量在内存中是有位置的，即内存地址</li><li>修改变量就是修改内存</li><li>读取变量就是读取内存</li><li>不用变量类型占用内存大小不一样，表示的范围也不一样</li></ul>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Hello World</title>
     <link href="/2020/03/14/hello-world/"/>
     <url>/2020/03/14/hello-world/</url>
