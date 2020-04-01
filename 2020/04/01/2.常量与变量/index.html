@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Austin Su">
   <meta name="keywords" content="">
-  <title>归档 - 圆环之理</title>
+  <title>2.常量与变量 - 圆环之理</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -43,7 +43,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -121,6 +121,33 @@
             </span>
 
             
+              
+                <p class="mt-3 post-meta">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                  星期三, 四月 1日 2020, 2:14 凌晨
+                </p>
+              
+
+              <p class="mt-1">
+                
+                  
+                  <span class="post-meta">
+                    <i class="far fa-chart-bar"></i>
+                    305 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta">
+                      <i class="far fa-clock"></i>
+                      1 分钟
+                  </span>
+                
+
+                
+              </p>
+            
           </div>
 
           
@@ -131,37 +158,145 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 3 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2020</p>
-    
-    <a href="/2020/03/14/hello-world/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Hello World</span>
-      <span style="float: right;">03-14</span>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5 z-depth-3" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <div class="markdown-body">
+              <p>##常量(Literal Constant)</p>
+<p>字面常量：字面上的值</p>
+<p>##变量</p>
+<p>定义：变量类型 变量名 初始值</p>
+<pre><code class="C">#include &lt;stdio.h&gt;
+int main()
+{
+    int name=0；
+    return 0；
+}</code></pre>
+<p>变量名命名规则：字母、数字和下划线的组合，必须以下划线或者字母开头。不允许使用关键字作为变量名。</p>
+<p>###整型变量</p>
+<p>三种类型：char、short、int</p>
+<table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th>sizeof</th>
+<th align="left">表示范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">char</td>
+<td>1</td>
+<td align="left">-128~127</td>
+</tr>
+<tr>
+<td align="left">short</td>
+<td>2</td>
+<td align="left">-32768~32767</td>
+</tr>
+<tr>
+<td align="left">int</td>
+<td>4</td>
+<td align="left">-2147483648~2147483647</td>
+</tr>
+<tr>
+<td align="left">unsigned char</td>
+<td>1</td>
+<td align="left">0~255</td>
+</tr>
+<tr>
+<td align="left">unsigned short</td>
+<td>2</td>
+<td align="left">0~65535</td>
+</tr>
+<tr>
+<td align="left">unsigned int</td>
+<td>4</td>
+<td align="left">0~4294967295</td>
+</tr>
+<tr>
+<td align="left">float</td>
+<td>4</td>
+<td align="left">-3.4x10^38~3.4x10^38</td>
+</tr>
+<tr>
+<td align="left">double</td>
+<td>8</td>
+<td align="left">-1.7x10^308~1.7x10^308</td>
+</tr>
+</tbody></table>
+<p>根据不同的数值范围，选择不同的类型。</p>
+<p>####整型变量的赋值</p>
+<pre><code class="C">int n1 = 10;//十进制方式
+int n2 = 0x0A;//十六进制方式
 
+int a = 0x123456789;
+int b = 305419896;</code></pre>
+<p>###浮点型变量</p>
+<p>用于表示小数</p>
+<p>double：8个字节(表示范围更大)</p>
+<p>float：4个字节(范围较小)</p>
+<p>浮点型变量输入：</p>
+<pre><code class="C">//float型变量的输入
+float a;
+scanf(&quot;%f&quot;,&amp;a)；
 
-              </div>
+//float变量的输出
+float b = 12.25；
+printf(&quot;%f&quot;,b);</code></pre>
+<p>float 是 <strong>%f</strong> ，double 是 <strong>%lf</strong></p>
+<h3 id="布尔型变量"><a href="#布尔型变量" class="headerlink" title="布尔型变量"></a>布尔型变量</h3><p>使用布尔型变量前，要添加头文件</p>
+<pre><code class="C">#include &lt;stdbool.h&gt;</code></pre>
+<p>布尔型变量只有两个：true 和 false</p>
+<pre><code class="C">bool a = true;
+bool is_late = false;</code></pre>
+
             </div>
+            <hr>
+            <div>
+              <p>
+                
+                
+                  <span>
+                <i class="iconfont icon-tag"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/C/">C</a>
+                    
+                  </span>
+                
+              </p>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+            </div>
+
+            
           </div>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc-start"></div>
+<div id="toc">
+  <p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
   </main>
 
@@ -226,6 +361,57 @@
 
 
 
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var navHeight = $('#navbar').height();
+      var post = $('#post');
+      var toc = $('#toc');
+      var tocLimMax = post.offset().top + post.height() - navHeight;
+
+      $(window).scroll(function () {
+        var tocLimMin = $('#toc-start').offset().top - navHeight;
+        var scroH = document.body.scrollTop + document.documentElement.scrollTop;
+
+        if (tocLimMin <= scroH && scroH <= tocLimMax) {
+          toc.css({
+            'display': 'block',
+            'position': 'fixed',
+            'top': navHeight,
+          });
+        } else if (scroH <= tocLimMin) {
+          toc.css({
+            'position': '',
+            'top': '',
+          });
+        } else if (scroH > tocLimMax) {
+          toc.css('display', 'none');
+        }
+      });
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        scrollSmooth: true,
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc > p').css('visibility', 'visible');
+      }
+      var offset = $('#board-ctn').css('margin-right')
+      $('#toc-ctn').css({
+        'right': offset
+      })
+    });
+  </script>
+
+
+
 
 
 
@@ -252,7 +438,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "2.常量与变量&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
